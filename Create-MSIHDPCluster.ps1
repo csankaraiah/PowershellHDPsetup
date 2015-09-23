@@ -1,7 +1,7 @@
 #Add-AzureAccount
 
 # Initialize variables: Change these to match your Azure environment 
-$subscriptionName = '<<mysubscription id' #Chakra: changed the name with subscription ID
+$subscriptionName = '<<mysubscription id>' #Chakra: changed the name with subscription ID
 $storageAccount = 'chakrahdpstor' #Chakra: changed it to the storage account in azure
 $numStorageAccounts = 4
 $serviceName = 'chakrahdp' #Chakra: changed this to cloud service name where i have one of the VM 
