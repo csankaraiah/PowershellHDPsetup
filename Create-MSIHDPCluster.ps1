@@ -1,18 +1,18 @@
-﻿#Add-AzureAccount
+#Add-AzureAccount
 
 # Initialize variables: Change these to match your Azure environment 
-$subscriptionName = 'Microsoft Azure Subscription' 
-$storageAccount = 'pedrorodmsihdpstor'
+$subscriptionName = '7d204bd6-841e-43fb-8638-c5eedf2ea797' #Chakra: changed the name with subscription ID
+$storageAccount = 'chakrahdpstor' #Chakra: changed it to the storage account in azure
 $numStorageAccounts = 4
-$serviceName = 'msihdp'
-$vnetName = 'msihdpvnet'
-$subnetName = 'Subnet-1'
-$location = 'East US'
+$serviceName = 'chakrahdp' #Chakra: changed this to cloud service name where i have one of the VM 
+$vnetName = 'chakrahdpnet' #Chakra: changed this to network account that i have in Azure
+$subnetName = 'Subnet-1' #Chakra: i have not changed my default subnet
+$location = 'North Central US' #Chakra: Changed this to North Central US
 $imageName = '5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-66-20150605'
-$userName = 'msiadmin'
-$password = 'msihdp123!'
+$userName = 'chakra'
+$password = 'Ch@11cha!'
 $type = 'Standard_LRS' #if you want premium storage, change this
-$Container = 'vhds'
+$Container = 'vhds' #Chakra: i left it as the default container 
 
 # Set the current subscription and storage account
 Select-AzureSubscription -SubscriptionName $subscriptionName
@@ -40,10 +40,10 @@ Set-AzureSubscription -SubscriptionName $subscriptionName -CurrentStorageAccount
 
 
 # Create the master nodes
-$masterVMName = 'msihdpmaster'
-$numMasterVMs = 3
+$masterVMName = 'hdpmaster' #Chakra: Changed this name from msihdpmaster
+$numMasterVMs = 2
 $masterVMSize = 'Standard_D13'
-$masterAVSetName = 'msihdpmaster'
+$masterAVSetName = 'hdpmaster' #Chakra: Changed this name from msihdpmaster
 $diskSize = 1000
 $diskLabel = 'datadisk1'
 $sshPort = 57700
@@ -85,10 +85,10 @@ for ($x=1; $x -le $numMasterVMs; $x++)
 }
 
 # Create the compute nodes
-$computeVMName = 'msihdpcomp'
+$computeVMName = 'hdpcompute'  #Chakra: Changed this name from msihdpcomp
 $numComputeVMs = 9
 $computeVMSize = 'Standard_D13'
-$computeAVSetName = 'msihdpcomp'
+$computeAVSetName = 'hdpcompute' #Chakra: Changed this name from msihdpcomp
 $numDataDisks = 8
 $diskSize = 1000
 $diskLabel = 'datadisk'
