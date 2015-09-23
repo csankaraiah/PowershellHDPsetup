@@ -1,7 +1,7 @@
 #Add-AzureAccount
 
 # Initialize variables: Change these to match your Azure environment 
-$subscriptionName = '7d204bd6-841e-43fb-8638-c5eedf2ea797' #Chakra: changed the name with subscription ID
+$subscriptionName = '<<mysubscription id' #Chakra: changed the name with subscription ID
 $storageAccount = 'chakrahdpstor' #Chakra: changed it to the storage account in azure
 $numStorageAccounts = 4
 $serviceName = 'chakrahdp' #Chakra: changed this to cloud service name where i have one of the VM 
@@ -10,7 +10,7 @@ $subnetName = 'Subnet-1' #Chakra: i have not changed my default subnet
 $location = 'North Central US' #Chakra: Changed this to North Central US
 $imageName = '5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-66-20150605'
 $userName = 'chakra'
-$password = 'Ch@11cha!'
+$password = '<my password>>'
 $type = 'Standard_LRS' #if you want premium storage, change this
 $Container = 'vhds' #Chakra: i left it as the default container 
 
